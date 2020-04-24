@@ -24,7 +24,7 @@ public class Player_Controller : MonoBehaviour {
         anim.SetBool("Grounded", grounded);
         anim.SetFloat("SpeedY", (rb2d.velocity.y));
 
-        if (Input.GetKeyDown(KeyCode.Z) && grounded){
+        if (Input.GetKeyDown(KeyCode.Z) && grounded && rb2d.velocity.y<10){
         	jump = true;
         }
     }
