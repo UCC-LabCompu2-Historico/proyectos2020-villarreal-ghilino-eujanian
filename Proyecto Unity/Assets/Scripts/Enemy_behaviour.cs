@@ -19,6 +19,7 @@ public class Enemy_behaviour : MonoBehaviour
     public float timer; //Timer for cooldown between attacks
     public Transform leftLimit;
     public Transform rightLimit;
+    public int health=100;
     #endregion
 
     #region Private Variables
@@ -204,4 +205,10 @@ public class Enemy_behaviour : MonoBehaviour
 
         transform.eulerAngles = rotation;
     }
+
+    public void DamageTaken(int damage){
+        health -= damage;
+    }
 }
+
+

@@ -13,7 +13,8 @@ public class Player_ : MonoBehaviour {
 	public float speed = 50f;
 	public bool grounded;
 	public float jumpPower = 6.5f;
-
+    public int health=100;
+    
 	private Rigidbody2D rb2d;
 	private Animator anim;
 	private bool jump;
@@ -81,5 +82,8 @@ public class Player_ : MonoBehaviour {
 
     void OnBecameInvisible (){
     	transform.position = new Vector3(-9, -3, 0);
+    }
+    public void DamageTaken(int damage){
+        health -= damage;
     }
 }
