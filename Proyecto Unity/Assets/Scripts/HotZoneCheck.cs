@@ -12,9 +12,11 @@ public class HotZoneCheck : MonoBehaviour
      	enemyParent = GetComponentInParent<Enemy_behaviour>();
      	anim = GetComponentInParent<Animator>();
      }
-     private void update(){
+
+     private void Update(){
      	if(inRange && !anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_attack")){
      		enemyParent.Flip();
+     		Debug.Log("Flip");
      	}
      }
 
