@@ -1097,6 +1097,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &444719333 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3551864212899283704, guid: e24e24bf470b8e641b2f079d6b3c8370,
+    type: 3}
+  m_PrefabInstance: {fileID: 5031495221322921018}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &489514481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2200,7 +2206,7 @@ Transform:
   - {fileID: 1275535661}
   - {fileID: 279016062}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &995785356
 GameObject:
@@ -2907,7 +2913,7 @@ PrefabInstance:
     - target: {fileID: 8063393533185176970, guid: 8bb9f23d68287f74e837f8b4f282864d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8063393533185176970, guid: 8bb9f23d68287f74e837f8b4f282864d,
         type: 3}
@@ -3313,6 +3319,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
   parallaxEffect: 0.3
+--- !u!1 &1717030557 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5031495219564545030, guid: e24e24bf470b8e641b2f079d6b3c8370,
+    type: 3}
+  m_PrefabInstance: {fileID: 5031495221322921018}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1717030558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717030557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d78eeaa642d16e34fa7eb4324730c0d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1730059656 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1320087214785640, guid: 13edbc543dcaed2418d4d597c7958356,
@@ -4038,6 +4062,21 @@ PrefabInstance:
       propertyPath: raycastMask.m_Bits
       value: 1024
       objectReference: {fileID: 0}
+    - target: {fileID: 5031495220207985224, guid: e24e24bf470b8e641b2f079d6b3c8370,
+        type: 3}
+      propertyPath: hotZone
+      value: 
+      objectReference: {fileID: 444719333}
+    - target: {fileID: 5031495220207985224, guid: e24e24bf470b8e641b2f079d6b3c8370,
+        type: 3}
+      propertyPath: triggerArea
+      value: 
+      objectReference: {fileID: 1717030557}
+    - target: {fileID: 5031495220207985226, guid: e24e24bf470b8e641b2f079d6b3c8370,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5031495220207985227, guid: e24e24bf470b8e641b2f079d6b3c8370,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4051,7 +4090,7 @@ PrefabInstance:
     - target: {fileID: 5031495220207985227, guid: e24e24bf470b8e641b2f079d6b3c8370,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5031495220207985227, guid: e24e24bf470b8e641b2f079d6b3c8370,
         type: 3}
