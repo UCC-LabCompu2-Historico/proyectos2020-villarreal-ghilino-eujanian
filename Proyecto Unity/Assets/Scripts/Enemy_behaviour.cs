@@ -22,9 +22,12 @@ public class Enemy_behaviour : MonoBehaviour
     [HideInInspector] public bool inRange; //Check if Player is in range
     public GameObject hotZone;
     public GameObject triggerArea;
+    public Collider2D Enemy_collider_death;
+    public GameObject Enemy_Collider;
     #endregion
 
     #region Private Variables
+    private bool dead;
     private Animator anim;
     private float distance; //Store the distance b/w enemy and player
     private bool attackMode;
@@ -43,24 +46,27 @@ public class Enemy_behaviour : MonoBehaviour
      void Start()
     {
         CurrentHealth= Maxhealth;
+        Enemy_collider_death.enabled = false;
     }
 
     void Update()
     {
-        if (!attackMode)
-        {
-            Move();
-        }
+        if (CurrentHealth > 0){
+            if (!attackMode)
+            {
+                Move();
+            }
 
-        if (!InsideOfLimits() && !inRange && !anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_attack"))
-        {
-            SelectTarget();
-        }
+            if (!InsideOfLimits() && !inRange && !anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_attack"))
+            {
+                SelectTarget();
+            }
 
 
-        if (inRange)
-        {
-            EnemyLogic();
+            if (inRange)
+            {
+                EnemyLogic();
+            }
         }
     }
 
@@ -139,20 +145,20 @@ public class Enemy_behaviour : MonoBehaviour
     {
         float distanceToLeft = Vector3.Distance(transform.position, leftLimit.position);
         float distanceToRight = Vector3.Distance(transform.position, rightLimit.position);
+            if (distanceToLeft > distanceToRight)
+            {
+                target = leftLimit;
+            }
+            else
+            {
+                target = rightLimit;
+            }
 
-        if (distanceToLeft > distanceToRight)
-        {
-            target = leftLimit;
-        }
-        else
-        {
-            target = rightLimit;
-        }
+            //Ternary Operator
+            //target = distanceToLeft > distanceToRight ? leftLimit : rightLimit;
 
-        //Ternary Operator
-        //target = distanceToLeft > distanceToRight ? leftLimit : rightLimit;
-
-        Flip();
+            Flip(); 
+        
     }
 
 
@@ -160,6 +166,7 @@ public class Enemy_behaviour : MonoBehaviour
     public void Flip()
     {
         Vector3 rotation = transform.eulerAngles;
+
         if (transform.position.x > target.position.x) 
         {
             rotation.y = 180;
@@ -172,7 +179,10 @@ public class Enemy_behaviour : MonoBehaviour
 
         //Ternary Operator
         //rotation.y = (currentTarget.position.x < transform.position.x) ? rotation.y = 180f : rotation.y = 0f;
-
+        if(dead){
+            rotation.y = 180;
+        }
+        
         transform.eulerAngles = rotation;
     }
 
@@ -190,9 +200,11 @@ public class Enemy_behaviour : MonoBehaviour
 
         anim.SetBool("Dead", true);
 
-        GetComponentInParent<Collider2D>().enabled = false;
+        dead = true;
 
-        this.enabled = false;
+        Enemy_collider_death.enabled = true;
+
+        Enemy_Collider.SetActive(false);
 
 
 
