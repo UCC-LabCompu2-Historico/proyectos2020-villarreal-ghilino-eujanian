@@ -17,7 +17,7 @@ public class Enemy_behaviour : MonoBehaviour
     public float timer; //Timer for cooldown between attacks
     public Transform leftLimit;
     public Transform rightLimit;
-    public int health=100;
+    public int Maxhealth=100;
     [HideInInspector] public Transform target;
     [HideInInspector] public bool inRange; //Check if Player is in range
     public GameObject hotZone;
@@ -28,7 +28,7 @@ public class Enemy_behaviour : MonoBehaviour
     private Animator anim;
     private float distance; //Store the distance b/w enemy and player
     private bool attackMode;
-    
+    private int CurrentHealth;
     private bool cooling; //Check if Enemy is cooling after attack
     private float intTimer;
     #endregion
@@ -38,6 +38,11 @@ public class Enemy_behaviour : MonoBehaviour
         SelectTarget();
         intTimer = timer; //Store the inital value of timer
         anim = GetComponent<Animator>();
+    }
+
+     void Start()
+    {
+        CurrentHealth= Maxhealth;
     }
 
     void Update()
@@ -172,7 +177,25 @@ public class Enemy_behaviour : MonoBehaviour
     }
 
     public void DamageTaken(int damage){
-        health -= damage;
+        CurrentHealth -= damage;
+        
+        anim.SetTrigger("Hurt");
+
+        if (CurrentHealth <= 0){
+            Die();
+        }
+    }
+
+    void Die(){
+
+        anim.SetBool("Dead", true);
+
+        GetComponentInParent<Collider2D>().enabled = false;
+
+        this.enabled = false;
+
+
+
     }
 }
 

@@ -9,7 +9,7 @@ using UnityEngine;
 //Appreciate your support.
 
 public class Player_ : MonoBehaviour {
-   public float maxSpeed = 5f;
+   public float maxSpeed = 50f;
 	public float speed = 50f;
 	public bool grounded;
 	public float jumpPower = 6.5f;
@@ -19,6 +19,7 @@ public class Player_ : MonoBehaviour {
 	private Animator anim;
 	private bool jump;
 	private bool DoubleJump;
+   
     // Start is called before the first frame update
     void Start() {
      
@@ -45,8 +46,9 @@ public class Player_ : MonoBehaviour {
         		jump = true;
         		DoubleJump = false;
         	}
-
         }
+
+        
     }
     void FixedUpdate(){
     	Vector3 fixedVelocity = rb2d.velocity;
@@ -76,7 +78,7 @@ public class Player_ : MonoBehaviour {
     		jump = false;
     	}
 
-    	Debug.Log(rb2d.velocity.y);
+    	
     	
     } 
 
@@ -86,4 +88,5 @@ public class Player_ : MonoBehaviour {
     public void DamageTaken(int damage){
         health -= damage;
     }
+    
 }
