@@ -206,8 +206,6 @@ public class Enemy_behaviour : MonoBehaviour
 
         Enemy_Collider.SetActive(false);
 
-
-
     }
 }
 
