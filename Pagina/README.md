@@ -21,7 +21,7 @@ link:http
 
 Este proyecto fue realizado utilizando Unity (ver 2019.3.11f1) para el modelado del juego y posterior exportación del mismo, WebStorm (ver 2019.3.4) para el modelado de la página web a través de HTML y su hoja de estilo en CSS, y el arte utilizado en el juego fue creado por:
 
-- Personaje principal: OcO (https://itch.io/profile/oco), utilizamos "Medieval Fantasy Character Pack" Pack".
+- Personaje principal: https://itch.io/profile/oco "Medieval Fantasy Character Pack".
 - Tileset: https://twitter.com/Namatnieks "Free Pixelart Platformer Tileset".
 - Background: https://itch.io/profile/edermunizz "Free Pixel Art Forest".
 
