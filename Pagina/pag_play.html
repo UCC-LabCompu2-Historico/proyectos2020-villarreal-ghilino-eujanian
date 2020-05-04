@@ -4,103 +4,27 @@
     <meta charset="UTF-8">
     <title>nombre del juego</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-
-    <style>
-        body{
-            font-family: 'Lato', sans-serif;
-            background: #132226;
-        }
-        h1 {
-            font-size: 40px;
-            margin-left:30px;
-            color:white;
-            position: relative;
-            bottom:10px;
-        }
-        h2 {
-            text-align: center;
-            color:white;
-        }
-
-        div.titulo {
-            text-shadow: 2px 4px 2px black;
-            background: #132226;
-            border: 1px solid #201e1d;
-        }
-
-        div.column {
-            float: left;
-            width:33.3%;
-            background: #525b56;
-            padding: 10px;
-            border: 1px solid #201e1d;
-        }
-        div.columna{
-            width:auto;
-            background: #525b56;
-            padding: 10px;
-            border: 1px solid #201e1d;
-        }
-        div.cuerpo {
-            border-bottom: 1px solid #201e1d;
-            border-left: 1px solid #201e1d;
-            border-right: 1px solid #201e1d;
-            height:900px;
-            background: #90867f;
-            padding: 30px;
-        }
-
-        #img_personaje {
-            position: relative;
-            width: 55px;
-            left:30px;
-            top:10px;
-        }
-        div.espaciojuego{
-            border: 2px solid #201e1d;
-            height:600px;
-            margin: 1px;
-            background: #d5d0cc;
-        }
-
-        a:link {
-            color:white;
-            text-decoration: none;
-
-        }
-        a:visited {
-            color: white;
-        }
-        a:hover {
-            color: #fff5d3;
-
-            font-weight: bold;
-
-        }
-    </style>
-
-
+    <link rel="stylesheet" href="estilopag.css" type="text/css">
 
 </head>
 
 
 <body>
 
-<div class="titulo">
+<header class="titulo">
+    <h1>Knightly Knight <img id="img_personaje" src="Imagenes%20y%20gifs/icon_pag.png" alt="foto_personaje"></h1>
+</header>
 
-    <h1>Titulo del juego <img id="img_personaje" src="Imagenes%20y%20gifs/icon_pag.png" alt="foto_personaje"></h1>
-</div>
 
-
-<div class="column" >
+<div class="column1" >
     <h2><a href="pag_about.html"  target="_self">ABOUT</a></h2>
 
 </div>
-<div class="column" >
+<div class="column3" >
     <h2><a href="pag_play.html"  target="_self">PLAY</a></h2>
 
 </div>
-<div class="columna" style=" background: #525b56"  >
+<div class="column2">
     <h2><a href="pag_credits.html"  target="_self">CREDITS</a></h2>
 
 </div>
@@ -109,10 +33,10 @@
 
 <div class="cuerpo">
 
-    <div class="espaciojuego" >
+    <canvas class="espaciojuego">
 
 
-    </div>
+    </canvas>
 
     <div class="sub1" >
         <h3>Controles</h3>
@@ -123,6 +47,6 @@
 
 </div>
 
-
+<footer>Tienes alguna pregunta, o algo que quieras cambiar al juego? Comunicate con nosotros, enviando un mail a knightyknight@gmail.com. Gracias por jugar!</footer>
 </body>
 </html>

@@ -2,6 +2,12 @@ body{
     font-family: 'Lato', sans-serif;
     background: #132226;
 }
+footer{
+    margin-top: 8px;
+    font-size: 12px;
+    color: #d5d0cc;
+    text-align: center;
+}
 h1 {
     font-size: 40px;
     margin-left:30px;
@@ -14,24 +20,34 @@ h2 {
     color:white;
 }
 
-div.titulo {
+header.titulo {
     text-shadow: 2px 4px 2px black;
     background: #132226;
-    padding: 2px;
+
 }
 
 div.column1 {
     float: left;
     width:33.3%;
     background: #525b56;
-    padding: 2px;
+    padding: 1px;
     border: 1px solid #201e1d;
 }
 div.column2{
     width:auto;
     background: #525b56;
-    padding: 2px;
+    padding: 1px;
     border: 1px solid #201e1d;
+}
+div.column3 {
+    float: left;
+    width:33.3%;
+    background: #525b56;
+    padding: 1px;
+    border-left: 0;
+    border-right: 1px solid #201e1d;
+    border-top: 1px solid #201e1d;
+    border-bottom: 1px solid #201e1d;
 }
 div.cuerpo {
     border-bottom: 1px solid #201e1d;
@@ -44,6 +60,17 @@ div.cuerpo {
 div.sub1{
 
 }
+
+canvas.espaciojuego{
+    border: 2px solid #201e1d;
+    display: block;
+    height:600px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #d5d0cc;
+}
+
+
 #img_personaje {
     position: relative;
     width: 55px;
@@ -65,3 +92,4 @@ a:hover {
     font-weight: bold;
 
 }
+
