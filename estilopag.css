@@ -28,7 +28,7 @@ header.titulo {
 
 div.column1 {
     float: left;
-    width:33.3%;
+    width:25%;
     background: #525b56;
     padding: 1px;
     border: 1px solid #201e1d;
@@ -41,7 +41,7 @@ div.column2{
 }
 div.column3 {
     float: left;
-    width:33.3%;
+    width:25%;
     background: #525b56;
     padding: 1px;
     border-left: 0;
