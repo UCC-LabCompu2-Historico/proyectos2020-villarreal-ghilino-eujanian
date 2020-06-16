@@ -13,6 +13,8 @@ Este proyecto fue realizado por
 
 Este es el link que redirige a la página gh-pages para poder jugar!
 
+[Knightly Knight](UCC-LabCompu2.github.io/proyectos2020-villarreal-ghilino-eujanian)
+
 ```
 UCC-LabCompu2.github.io/proyectos2020-villarreal-ghilino-eujanian
 ```
