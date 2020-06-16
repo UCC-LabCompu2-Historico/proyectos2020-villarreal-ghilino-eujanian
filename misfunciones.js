@@ -21,9 +21,9 @@ function conversor(id, valor) {
         dolar = "";
     } else if (id=="euro"){
         euro = valor;
-        dolar = 0.89*valor;
+        dolar = 1.13*valor;
     } else if (id=="dolar"){
-        euro = valor*1.13;
+        euro = valor*0.89;
         dolar = valor;
     }
 
@@ -33,11 +33,16 @@ function conversor(id, valor) {
 
 }
 
-
+/**
+ * Control de alertas de donacion y llamada a funcion dibujarProgreso
+ * @method donar1
+ * @return
+ */
 function donar1(){
     var dolar;
     dolar = document.getElementById("dolar").value;
     if (dolar>0) {
+        dibujarProgreso(dolar);
         alert('Gracias por su donacion!')
     } else {
         alert('Su donacion no fue procesada, por favor revise los datos ingresados')
@@ -45,4 +50,32 @@ function donar1(){
 
 
 }
+/**
+ * Control de dibujo
+ * @param {number} valor - cantidad a dibujar
+ * @method dibujarProgreso
+ * @return
+ */
 
+
+bandera=0;
+function dibujarProgreso(valor) {
+    var dolar = valor;
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var xMax = canvas.width;
+    var yMax = canvas.height;
+    var posFinal = 0;
+
+
+    ctx.fillStyle = "#00e009";
+    ctx.fillRect(posFinal,0,dolar,yMax);
+    ctx.fill();
+
+
+    if (dolar>xMax){
+        alert('Hemos llegado al maximo de donaciones!')
+        canvas.width=canvas.width;
+    }
+
+}
