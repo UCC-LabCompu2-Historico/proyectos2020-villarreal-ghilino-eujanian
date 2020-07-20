@@ -34,16 +34,24 @@ function conversor(id, valor) {
 }
 
 /**
- * Control de alertas de donacion y llamada a funcion dibujarProgreso
+ * Control de alertas y cant de donacion y llamada a funcion dibujarProgreso
  * @method donar1
  * @return
  */
+
+var cuenta = 0;
+
 function donar1(){
     var dolar;
     dolar = document.getElementById("dolar").value;
+
+
+
     if (dolar>0) {
         dibujarProgreso(dolar);
-        alert('Gracias por su donacion!')
+        alert('Gracias por su donacion!');
+        cuenta = cuenta + 1;
+        document.form_contador.cuenta.value = cuenta;
     } else {
         alert('Su donacion no fue procesada, por favor revise los datos ingresados')
     }
@@ -58,7 +66,7 @@ function donar1(){
  */
 
 
-bandera=0;
+var progreso = 0;
 function dibujarProgreso(valor) {
     var dolar = valor;
     var canvas = document.getElementById("myCanvas");
@@ -69,13 +77,17 @@ function dibujarProgreso(valor) {
 
 
     ctx.fillStyle = "#00e009";
-    ctx.fillRect(posFinal,0,dolar,yMax);
+    ctx.fillRect(progreso,0,dolar,yMax);
     ctx.fill();
 
+    progreso = progreso + dolar;
 
     if (dolar>xMax){
-        alert('Hemos llegado al maximo de donaciones!')
+        alert('Hemos llegado al maximo de donaciones!');
         canvas.width=canvas.width;
     }
 
 }
+
+
+
