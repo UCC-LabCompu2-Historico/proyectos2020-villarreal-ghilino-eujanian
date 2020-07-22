@@ -80,11 +80,12 @@ function dibujarProgreso(valor) {
     ctx.fillRect(progreso,0,dolar,yMax);
     ctx.fill();
 
-    progreso = progreso + dolar;
+    progreso = Number(progreso) + Number(dolar);
 
-    if (dolar>xMax){
+    if (dolar>xMax || progreso>xMax){
         alert('Hemos llegado al maximo de donaciones!');
         canvas.width=canvas.width;
+        progreso = 0;
     }
 
 }
